@@ -2,16 +2,16 @@ import React from "react";
 import { render, screen } from '@testing-library/react';
 import OverviewItem from "./OverviewItem";
 
-export const item = {
+export const player = {
     realName: 'realName',
     playerName: 'playerName',
     asset: 'asset',
 };
 describe('OverviewItem', () => {
     test('renders ', () => {
-        render(<OverviewItem item={item}/>);
+        render(<OverviewItem player={player}/>);
 
-        const linkElement = screen.getByText(item.realName);
+        const linkElement = screen.getByText(player.realName);
 
         expect(linkElement).toBeInTheDocument();
     });

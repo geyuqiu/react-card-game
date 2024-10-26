@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Details from './components/Details/Details';
 import Controls from './components/Controls/Controls';
 import Overview, { apiUrl } from './components/Overview/Overview';
-import { Item } from './models/item';
+import { Player } from './models/player';
 import { useFetch } from './hooks/useFetch';
 
 export function Layout() {
-  const [item, setItem] = useState<Item>({} as Item);
-  const {results} = useFetch<Item[]>(apiUrl);
-  const [sortedResults, setSortedResults] = useState<Item[]>(results || []);
+  const [player, setPlayer] = useState<Player>({} as Player);
+  const {results} = useFetch<Player[]>(apiUrl);
+  const [sortedResults, setSortedResults] = useState<Player[]>(results || []);
 
   useEffect(() => {
     if (results) {
@@ -16,8 +16,8 @@ export function Layout() {
     }
   }, [results]);
 
-  const updateItem = (newItem: Item) => {
-    setItem(newItem);
+  const updateItem = (newItem: Player) => {
+    setPlayer(newItem);
   };
 
   const sortResultsAsc = () => {
@@ -36,9 +36,9 @@ export function Layout() {
 
   return (
     <>
-      <Details item={item}/>
-      <Controls item={item} sortResultsAsc={sortResultsAsc} sortResultsDesc={sortResultsDesc}/>
-      <Overview updateItem={updateItem} sortedResults={sortedResults}/>
+      <Details player={player}/>
+      <Controls player={player} sortResultsAsc={sortResultsAsc} sortResultsDesc={sortResultsDesc}/>
+      <Overview updatePlayer={updateItem} sortedResults={sortedResults}/>
     </>
   );
 }

@@ -1,20 +1,20 @@
 import React from "react";
-import { Item } from '../../models/item';
+import { Player } from '../../models/player';
 import OverviewItem from '../OverviewItem/OverviewItem';
 
 export const apiUrl = 'https://opensource.aoe.com/the-card-game-data/player.json';
 
 interface OverviewProps {
-  updateItem: (newValue: Item) => void;
-  sortedResults: Item[] | null;
+  updatePlayer: (newValue: Player) => void;
+  sortedResults: Player[] | null;
 }
 
 export default function Overview (props: OverviewProps) {
   return (
     <div data-testid='overview-list'>
-      { props.sortedResults?.length && props.sortedResults.map((item: Item, i: number) =>
-        <OverviewItem item={item} key={i} onClick={() => {
-          props.updateItem(item);
+      { props.sortedResults?.length && props.sortedResults.map((player: Player, i: number) =>
+        <OverviewItem player={player} key={i} onClick={() => {
+          props.updatePlayer(player);
         }}/>
       )}
     </div>

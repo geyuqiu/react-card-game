@@ -1,11 +1,11 @@
 import React from "react";
-import { Item } from '../../models/item';
+import { Player } from '../../models/player';
 import OverviewItem from '../OverviewItem/OverviewItem';
 
 interface DetailsProps {
-  item: Item
+  player: Player
 }
 
 export default function Details (props: DetailsProps) {
-  return <OverviewItem item={props.item} dataTestId={'details'}/>;
+  return <OverviewItem player={props.player} dataTestId={'details'}/>;
 }

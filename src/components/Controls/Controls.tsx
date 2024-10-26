@@ -1,15 +1,15 @@
 import React from "react";
-import { Item } from '../../models/item';
+import { Player } from '../../models/player';
 
 interface ControlsProps {
-	item: Item,
+	player: Player,
 	sortResultsAsc: () => void
 	sortResultsDesc: () => void
 }
 
 export default function Controls(props: ControlsProps) {
 	const submit = () => {
-		console.log(props.item);
+		console.log(props.player);
 	}
 
 	return (
