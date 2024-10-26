@@ -10,7 +10,7 @@ interface DetailsProps {
 export default function Details ({player}: DetailsProps) {
   return (
     <Border className="min-w-[45%]">
-      <OverviewItem player={player} dataTestId={'details'} title={'Details'}/>
+      <OverviewItem player={player} dataTestId={'details'} title={'Details'} className="px-2"/>
     </Border>
   );
 }

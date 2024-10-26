@@ -14,12 +14,13 @@ export default function Overview ({updatePlayer, sortedResults}: OverviewProps) 
   return (
     <div>
       <h1 className="px-2 text-4xl font-thin px-6 pb-5">Overview</h1>
-      <div className="grid grid-cols-3 gap-3 px-10 max-w-[54%]" data-testid='overview-list'>
+      <div className="grid grid-cols-3 gap-4 px-10 max-w-[40%]" data-testid='overview-list'>
         { sortedResults?.length && sortedResults.map((player: Player, i: number) =>
           <Border className="">
-            <OverviewItem player={player} key={i} onClick={() => {
-              updatePlayer(player);
-            }}/>
+            <OverviewItem player={player} key={i}
+                          onClick={() => updatePlayer(player)}
+                          className="cursor-pointer"
+            />
           </Border>
         )}
       </div>

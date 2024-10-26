@@ -49,5 +49,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## usage of frameworks
 
-* craco was used to enable build with tailwindcss
-* tailwindcss was used to enable style apps from ground up without any frameworks
+* craco was used to enable create-react-app build with tailwindcss
+* tailwindcss (>3) was used to enable style apps from ground up without any frameworks, 
+although simple css was used in index.css
+* clsx was used to dynamically construct classnames strings

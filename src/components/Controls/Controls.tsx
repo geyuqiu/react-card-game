@@ -16,14 +16,12 @@ export default function Controls({player, sortResultsAsc, sortResultsDesc}: Cont
 
 	return (
 		<Border>
-			<aside>
-				<h1 className="px-2 text-4xl font-thin">Controls</h1>
-				<div className="flex">
-					<Button dataTestId={"sortAsc"} onClick={sortResultsAsc} text={'SORT ASC'}/>
-					<Button dataTestId={"sortDesc"} onClick={sortResultsDesc} text={'SORT DESC'}/>
-				</div>
-				<Button dataTestId={"submit"} onClick={submit} text={'SUBMIT'}/>
-			</aside>
+			<h1 className="px-2 text-4xl font-thin">Controls</h1>
+			<div className="flex">
+				<Button dataTestId={"sortAsc"} onClick={sortResultsAsc} text={'SORT ASC'}/>
+				<Button dataTestId={"sortDesc"} onClick={sortResultsDesc} text={'SORT DESC'}/>
+			</div>
+			<Button dataTestId={"submit"} onClick={submit} text={'SUBMIT'}/>
 		</Border>
 	);
 }
