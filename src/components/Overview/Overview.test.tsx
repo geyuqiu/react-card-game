@@ -5,14 +5,9 @@ import { item } from '../OverviewItem/OverviewItem.test';
 
 describe('Overview', () => {
     test('renders overview-list', async () => {
-        let mockOverviewItems = [
+        render(<Overview updateItem={() => {}} sortedResults={[
             item
-        ];
-        global.fetch = jest.fn().mockResolvedValue({
-            ok: true,
-            json: jest.fn().mockResolvedValue(mockOverviewItems)
-        });
-        render(<Overview updateItem={() => {}}/>);
+        ]}/>);
 
         await waitFor(() => {
             expect(screen.getAllByTestId('overview-list').length)

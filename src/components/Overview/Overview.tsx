@@ -1,20 +1,18 @@
 import React from "react";
-import { useFetch } from '../../hooks/useFetch';
 import { Item } from '../../models/item';
 import OverviewItem from '../OverviewItem/OverviewItem';
 
 export const apiUrl = 'https://opensource.aoe.com/the-card-game-data/player.json';
 
 interface OverviewProps {
-  updateItem: (newValue: Item) => void
+  updateItem: (newValue: Item) => void;
+  sortedResults: Item[] | null;
 }
 
 export default function Overview (props: OverviewProps) {
-  const {results} = useFetch<Item[]>(apiUrl);
-
   return (
     <div data-testid='overview-list'>
-      { results?.length && results.map((item: Item, i: number) =>
+      { props.sortedResults?.length && props.sortedResults.map((item: Item, i: number) =>
         <OverviewItem item={item} key={i} onClick={() => {
           props.updateItem(item);
         }}/>

@@ -2,19 +2,21 @@ import React from "react";
 import { Item } from '../../models/item';
 
 interface ControlsProps {
-  item: Item
+	item: Item,
+	sortResultsAsc: () => void
+	sortResultsDesc: () => void
 }
 
-export default function Controls (props: ControlsProps) {
-  const submit = () => {
-    console.log(props.item);
-  }
+export default function Controls(props: ControlsProps) {
+	const submit = () => {
+		console.log(props.item);
+	}
 
-  return (
-    <>
-      <button>SORT ASC</button>
-      <button>SORT DESC</button>
-      <button onClick={() => submit()}>SUBMIT</button>
-    </>
-  );
+	return (
+		<>
+			<button onClick={() => props.sortResultsAsc()}>SORT ASC</button>
+			<button onClick={() => props.sortResultsDesc()}>SORT DESC</button>
+			<button onClick={() => submit()}>SUBMIT</button>
+		</>
+	);
 }

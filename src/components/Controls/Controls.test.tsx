@@ -6,7 +6,7 @@ import Controls from './Controls';
 describe('Controls', () => {
     test('renders ', () => {
         expect(render(
-          <Controls item={{} as Item}/>
+          <Controls item={{} as Item} sortResultsAsc={() => {}} sortResultsDesc={() => {}}/>
         )).toBeTruthy();
     });
 
@@ -19,7 +19,7 @@ describe('Controls', () => {
 
         const consoleLogSpy = jest.spyOn(console, 'log');
 
-        render(<Controls item={mockItem} />);
+        render(<Controls item={{} as Item} sortResultsAsc={() => {}} sortResultsDesc={() => {}}/>);
 
         const submitButton = screen.getByText('SUBMIT');
         fireEvent.click(submitButton);
