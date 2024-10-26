@@ -12,7 +12,7 @@ describe('Overview', () => {
             ok: true,
             json: jest.fn().mockResolvedValue(mockOverviewItems)
         });
-        render(<Overview />);
+        render(<Overview updateItem={() => {}}/>);
 
         await waitFor(() => {
             expect(screen.getAllByTestId('overview-list').length)

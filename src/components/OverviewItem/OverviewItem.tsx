@@ -1,14 +1,15 @@
 import React from "react";
 import { Item } from '../../models/item';
 
-interface OverwiewProps {
-  item: Item
+interface OverviewItemProps {
+  item: Item;
+  onClick?: () => void;
 }
 
-export default function OverviewItem (props: OverwiewProps) {
-  const {item} = props;
+export default function OverviewItem (props: OverviewItemProps) {
+  const {item, onClick} = props;
 
-  return <ul className="dashed">
+  return <ul className="dashed" onClick={onClick}>
     <li>{item?.realName}</li>
     <li>{item?.playerName}</li>
     <li>{item?.asset}</li>
