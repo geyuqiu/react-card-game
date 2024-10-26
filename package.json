@@ -27,6 +27,7 @@
     "typescript": "^3.9.10"
   },
   "scripts": {
+    "e2e": "cypress run",
     "start": "craco start",
     "build": "craco build",
     "gen": "schematics react-schematics-ts:react",
