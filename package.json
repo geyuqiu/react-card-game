@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@angular-devkit/schematics-cli": "^16.2.7",
-    "@craco/craco": "^5.9.0",
+    "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^10.4.9",
     "@testing-library/react-hooks": "^8.0.1",
@@ -26,7 +26,7 @@
     "react-schematics-ts": "^1.0.1",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.4.14",
-    "typescript": "^3.9.10"
+    "typescript": "^5.6.3"
   },
   "scripts": {
     "e2e": "cypress run",
