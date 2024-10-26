@@ -10,9 +10,11 @@ interface OverviewItemProps {
 export default function OverviewItem (props: OverviewItemProps) {
   const {player, onClick, dataTestId} = props;
 
-  return <ul className="dashed" onClick={onClick} data-testid={dataTestId ? dataTestId : "overview-item-list"}>
-    <li>{player?.realName}</li>
-    <li>{player?.playerName}</li>
-    <li>{player?.asset}</li>
-  </ul>;
+  return (
+    <ul className="dashed" onClick={onClick} data-testid={dataTestId ? dataTestId : "overview-item-list"}>
+      <li>{player?.realName}</li>
+      <li>{player?.playerName}</li>
+      <li>{player?.asset}</li>
+    </ul>
+  );
 }
