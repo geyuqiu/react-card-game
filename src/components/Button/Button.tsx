@@ -1,4 +1,5 @@
 import React from "react";
+import Border from '../Border/Border';
 
 interface ButtonProps {
   dataTestId: string;
@@ -6,9 +7,10 @@ interface ButtonProps {
   text: string;
 }
 
-export default function Button (props: ButtonProps) {
-  const {dataTestId, onClick, text} = props;
+export default function Button ({dataTestId, onClick, text}: ButtonProps) {
   return (
-    <button data-testid={dataTestId} onClick={onClick}>{text}</button>
+    <Border className="p-3 m-3 text-center">
+      <button data-testid={dataTestId} onClick={onClick}>{text}</button>
+    </Border>
   );
 }
