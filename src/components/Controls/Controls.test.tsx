@@ -19,7 +19,7 @@ describe('Controls', () => {
 
         const consoleLogSpy = jest.spyOn(console, 'log');
 
-        render(<Controls item={{} as Item} sortResultsAsc={() => {}} sortResultsDesc={() => {}}/>);
+        render(<Controls item={mockItem} sortResultsAsc={() => {}} sortResultsDesc={() => {}}/>);
 
         const submitButton = screen.getByText('SUBMIT');
         fireEvent.click(submitButton);
