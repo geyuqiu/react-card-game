@@ -1,5 +1,6 @@
 import React from "react";
 import { Player } from '../../models/player';
+import Button from '../Button/Button';
 
 interface ControlsProps {
 	player: Player,
@@ -8,15 +9,20 @@ interface ControlsProps {
 }
 
 export default function Controls(props: ControlsProps) {
+	const {player, sortResultsAsc, sortResultsDesc} = props;
+
 	const submit = () => {
-		console.log(props.player);
+		console.log(player);
 	}
 
 	return (
-		<aside>
-			<button data-testid="sortAsc" onClick={() => props.sortResultsAsc()}>SORT ASC</button>
-			<button data-testid="sortDesc" onClick={() => props.sortResultsDesc()}>SORT DESC</button>
-			<button data-testid="submit" onClick={() => submit()}>SUBMIT</button>
+		<aside className="basis-2/5 border-white border">
+			<h1 className="px-2 text-4xl font-thin"> Controls</h1>
+			<div className="flex">
+				<Button dataTestId={"sortAsc"} onClick={sortResultsAsc} text={'SORT ASC'}/>
+				<Button dataTestId={"sortDesc"} onClick={sortResultsDesc} text={'SORT DESC'}/>
+			</div>
+			<Button dataTestId={"submit"} onClick={submit} text={'SUBMIT'}/>
 		</aside>
 	);
 }

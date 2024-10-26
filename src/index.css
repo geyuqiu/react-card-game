@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background: darkgray;
+    color: white;
+}
+
 ul {
     margin: 0;
 }
@@ -9,9 +14,12 @@ ul.dashed {
     list-style-type: none;
 }
 ul.dashed > li {
-    text-indent: 5px;
+    position: relative;
+    padding-left: 15px;
 }
 ul.dashed > li:before {
     content: "-";
-    text-indent: 5px;
+    position: absolute;
+    left: 0;
+    padding-right: 5px;
 }

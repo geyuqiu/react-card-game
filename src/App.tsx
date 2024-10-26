@@ -11,8 +11,9 @@ export function Layout() {
   const [sortedResults, setSortedResults] = useState<Player[]>(results || []);
 
   useEffect(() => {
-    if (results) {
+    if (results && results.length) {
       setSortedResults(results);
+      setPlayer(results[0]);
     }
   }, [results]);
 
@@ -36,8 +37,10 @@ export function Layout() {
 
   return (
     <>
-      <Details player={player}/>
-      <Controls player={player} sortResultsAsc={sortResultsAsc} sortResultsDesc={sortResultsDesc}/>
+      <div className="flex flex-row p-6">
+        <Details player={player}/>
+        <Controls player={player} sortResultsAsc={sortResultsAsc} sortResultsDesc={sortResultsDesc}/>
+      </div>
       <Overview updatePlayer={updateItem} sortedResults={sortedResults}/>
     </>
   );

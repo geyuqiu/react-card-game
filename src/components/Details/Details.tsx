@@ -7,5 +7,9 @@ interface DetailsProps {
 }
 
 export default function Details (props: DetailsProps) {
-  return <OverviewItem player={props.player} dataTestId={'details'}/>;
+  return (
+    <div className="basis-3/5 mr-3">
+      <OverviewItem player={props.player} dataTestId={'details'} title={'Details'}/>
+    </div>
+  );
 }
