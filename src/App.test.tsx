@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
 jest.mock('./components/Overview/Overview', () => {
+  // @ts-ignore
   return ({ updateItem }) => (
     <button onClick={() => updateItem({ realName: 'Jane Doe', playerName: 'janedoe456', asset: 'example-asset-2.png' })}>
       Update Item
@@ -11,6 +12,7 @@ jest.mock('./components/Overview/Overview', () => {
 });
 
 jest.mock('./components/Details/Details', () => {
+  // @ts-ignore
   return ({ item }) => <div data-testid="details-item">{item.realName}</div>;
 });
 

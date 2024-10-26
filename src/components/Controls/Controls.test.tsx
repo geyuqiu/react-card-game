@@ -1,13 +1,31 @@
 import React from "react";
-import { render, screen } from '@testing-library/react';
-import Controls from "./Controls";
+import { fireEvent, render, screen } from '@testing-library/react';
+import { Item } from '../../models/item';
+import Controls from './Controls';
 
 describe('Controls', () => {
     test('renders ', () => {
-        render(<Controls />);
+        expect(render(
+          <Controls item={{} as Item}/>
+        )).toBeTruthy();
+    });
 
-        const linkElement = screen.getByText(/Hello Robert/i);
+    it('calls submit function when SUBMIT button is clicked', () => {
+        const mockItem: Item = {
+            realName: 'John Doe',
+            playerName: 'johndoe123',
+            asset: 'example-asset.png',
+        };
 
-        expect(linkElement).toBeInTheDocument();
+        const consoleLogSpy = jest.spyOn(console, 'log');
+
+        render(<Controls item={mockItem} />);
+
+        const submitButton = screen.getByText('SUBMIT');
+        fireEvent.click(submitButton);
+
+        expect(consoleLogSpy).toHaveBeenCalledWith(mockItem);
+
+        consoleLogSpy.mockRestore();
     });
 });

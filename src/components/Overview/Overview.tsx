@@ -15,7 +15,6 @@ export default function Overview (props: OverviewProps) {
   return (
     <div data-testid='overview-list'>
       { results?.length && results.map((item: Item, i: number) =>
-        // @ts-ignore
         <OverviewItem item={item} key={i} onClick={() => {
           props.updateItem(item);
         }}/>

@@ -14,7 +14,7 @@ export function Layout() {
   return (
     <>
       <Details item={item}/>
-      <Controls/>
+      <Controls item={item}/>
       <Overview updateItem={updateItem}/>
     </>
   );
