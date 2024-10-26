@@ -9,7 +9,7 @@ interface ButtonProps {
 
 export default function Button ({dataTestId, onClick, text}: ButtonProps) {
   return (
-    <Border className="p-3 m-3 text-center">
+    <Border className="p-2 text-center m-2">
       <button data-testid={dataTestId} onClick={onClick}>{text}</button>
     </Border>
   );

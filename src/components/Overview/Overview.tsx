@@ -12,17 +12,17 @@ interface OverviewProps {
 
 export default function Overview ({updatePlayer, sortedResults}: OverviewProps) {
   return (
-    <>
-      <h1 className="px-2 text-4xl font-thin px-6">Overview</h1>
-      <div className="grid grid-cols-3 gap-3 px-10" data-testid='overview-list'>
+    <div>
+      <h1 className="px-2 text-4xl font-thin px-6 pb-5">Overview</h1>
+      <div className="grid grid-cols-3 gap-3 px-10 max-w-[54%]" data-testid='overview-list'>
         { sortedResults?.length && sortedResults.map((player: Player, i: number) =>
-          <Border>
+          <Border className="">
             <OverviewItem player={player} key={i} onClick={() => {
               updatePlayer(player);
             }}/>
           </Border>
         )}
       </div>
-    </>
+    </div>
   );
 }
