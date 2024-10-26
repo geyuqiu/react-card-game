@@ -13,10 +13,10 @@ export default function Controls(props: ControlsProps) {
 	}
 
 	return (
-		<>
+		<aside>
 			<button onClick={() => props.sortResultsAsc()}>SORT ASC</button>
 			<button onClick={() => props.sortResultsDesc()}>SORT DESC</button>
 			<button onClick={() => submit()}>SUBMIT</button>
-		</>
+		</aside>
 	);
 }
