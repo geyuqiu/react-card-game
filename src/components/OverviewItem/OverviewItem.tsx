@@ -1,4 +1,16 @@
 import React from "react";
-export default function OverviewItem () {
-  return <p>OverviewItem</p>;
+import { Item } from '../../models/item';
+
+interface OverwiewProps {
+  item: Item
+}
+
+export default function OverviewItem (props: OverwiewProps) {
+  const {item} = props;
+
+  return <ul className="dashed">
+    <li>{item?.realName}</li>
+    <li>{item?.playerName}</li>
+    <li>{item?.asset}</li>
+  </ul>;
 }
