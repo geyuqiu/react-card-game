@@ -37,7 +37,7 @@ export function Layout() {
 
   return (
     <>
-      <div className="flex flex-row p-6 space-x-4">
+      <div className="flex p-6 space-x-4">
         <Details player={player}/>
         <Controls player={player} sortResultsAsc={sortResultsAsc} sortResultsDesc={sortResultsDesc}/>
       </div>
