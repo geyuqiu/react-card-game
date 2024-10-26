@@ -7,5 +7,5 @@ interface DetailsProps {
 }
 
 export default function Details (props: DetailsProps) {
-  return <OverviewItem item={props.item} />;
+  return <OverviewItem item={props.item} dataTestId={'details'}/>;
 }
