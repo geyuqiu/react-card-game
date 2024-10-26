@@ -14,9 +14,9 @@ export default function Controls(props: ControlsProps) {
 
 	return (
 		<aside>
-			<button onClick={() => props.sortResultsAsc()}>SORT ASC</button>
-			<button onClick={() => props.sortResultsDesc()}>SORT DESC</button>
-			<button onClick={() => submit()}>SUBMIT</button>
+			<button data-testid="sortAsc" onClick={() => props.sortResultsAsc()}>SORT ASC</button>
+			<button data-testid="sortDesc" onClick={() => props.sortResultsDesc()}>SORT DESC</button>
+			<button data-testid="submit" onClick={() => submit()}>SUBMIT</button>
 		</aside>
 	);
 }
