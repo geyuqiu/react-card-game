@@ -4,7 +4,7 @@ import OverflowListElement from "./OverflowListElement";
 
 describe('OverflowListElemnt', () => {
     test('renders ', () => {
-        render(<OverflowListElement text={'text'}  key={'key'}/>);
+        render(<OverflowListElement text='text'/>);
 
         const linkElement = screen.getByText('text');
 

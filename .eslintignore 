@@ -1,0 +1,19 @@
+# Ignore all JavaScript files
+*.js
+*.jsx
+
+# Ignore all other files
+*.json
+*.html
+*.css
+*.scss
+*.md
+*.jpg
+*.png
+*.gif
+*.svg
+
+# Ignore all folders except src
+build/
+dist/
+node_modules/
