@@ -2,7 +2,7 @@
 
 describe('My First Test', () => {
   it('shows a list of players and sort accordingly', () => {
-    cy.visit('https://geyuqiu.github.io/react-exercise/')
+    cy.visit('http://localhost:3000/')
     cy.get('[data-testid="overview-item-list"]').first().should('have.text', 'Brianna ForbesDreamlurk The UnstoppableFoghammer Lead')
     cy.get('[data-testid="overview-item-list"]').should('have.length', 6)
 

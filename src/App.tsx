@@ -13,7 +13,6 @@ export function Layout() {
   useEffect(() => {
     if (results && results.length) {
       setSortedResults(results);
-      setPlayer(results[0]);
     }
   }, [results]);
 
@@ -26,6 +25,7 @@ export function Layout() {
       return a.realName.localeCompare(b.realName);
     });
     setSortedResults(sorted);
+    setPlayer({} as Player);
   };
 
   const sortResultsDesc = () => {
@@ -33,6 +33,7 @@ export function Layout() {
       return b.realName.localeCompare(a.realName);
     });
     setSortedResults(sorted);
+    setPlayer({} as Player);
   };
 
   return (
