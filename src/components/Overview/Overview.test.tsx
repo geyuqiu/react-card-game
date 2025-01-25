@@ -5,6 +5,7 @@ import { player } from '../OverviewItem/OverviewItem.test';
 
 describe('Overview', () => {
     test('renders overview-list', async () => {
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         render(<Overview updatePlayer={() => {}} sortedResults={[
             player
         ]}/>);
