@@ -6,9 +6,11 @@ import { Player } from './models/player';
 import { useFetch } from './hooks/useFetch';
 
 export function Layout() {
-  const [player, setPlayer] = useState<Player>({} as Player);
+  const [player, setPlayer]
+    = useState<Player>({} as Player);
   const {results} = useFetch<Player[]>(apiUrl);
-  const [sortedResults, setSortedResults] = useState<Player[]>(results || []);
+  const [sortedResults, setSortedResults]
+    = useState<Player[]>(results || []);
 
   useEffect(() => {
     if (results && results.length) {
@@ -21,7 +23,8 @@ export function Layout() {
   };
 
   const sortResultsAsc = () => {
-    const sorted = [...(results || [])].sort((a, b) => {
+    const sorted = [...(results || [])]
+      .sort((a, b) => {
       return a.realName.localeCompare(b.realName);
     });
     setSortedResults(sorted);
@@ -29,7 +32,8 @@ export function Layout() {
   };
 
   const sortResultsDesc = () => {
-    const sorted = [...(results || [])].sort((a, b) => {
+    const sorted = [...(results || [])]
+      .sort((a, b) => {
       return b.realName.localeCompare(a.realName);
     });
     setSortedResults(sorted);
